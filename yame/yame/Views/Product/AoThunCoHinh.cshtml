@@ -1,0 +1,298 @@
+﻿@using Azure.Core
+@model IEnumerable<yame.Models.Product>
+
+@{
+    ViewData["Title"] = "AoThunCoHinh";
+
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<style type="text/css">
+    .old-price,
+    .new-price,
+    discount {
+        display: inline-block;
+        margin-right: 10px;
+        /* Tạo khoảng cách giữa hai giá */
+    }
+
+
+
+    .color-options {
+        width: 55px;
+        /* Đặt kích thước cho hình ảnh */
+        height: 50px;
+        border-radius: 50%;
+        /* Tạo hình tròn cho hình ảnh nếu cần */
+        object-fit: cover;
+        /* Đảm bảo hình ảnh không bị méo */
+        padding-left: 10px;
+        gap: 10px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .w-100 {
+        display: none !important;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .product-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+
+    .product-grid01 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-item01 {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 550px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .product-item {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    .product-info {
+        margin-top: 10px;
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .discount {
+        background-color: none;
+        color: black;
+        padding: 3px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .color-options {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 5px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 20px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+        .color-options01 img {
+            border-radius: 8px;
+        }
+
+    .product-item01 img {
+        border-radius: 8px;
+        max-width: 520px;
+        height: auto
+    }
+
+
+    .color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+
+    .search-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Định dạng cho thanh tìm kiếm */
+    .search-bar select {
+        width: 100%;
+        max-width: 1200px;
+        /* Chiều rộng của thanh chọn lọc */
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block;
+        /* Để margin: auto hoạt động */
+        margin: 0 auto;
+        /* Căn giữa */
+    }
+
+    /* Định dạng cho banner hình ảnh */
+    .banner {
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-image {
+        width: 100%;
+        max-width: 1200px;
+        /* Giới hạn kích thước tối đa của ảnh */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        /* Đặt vị trí bên phải để hình ảnh ẩn */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        /* Hiệu ứng chuyển tiếp khi hover */
+    }
+
+    .image-container:hover .image {
+        transform: translateX(-130%);
+        /* Di chuyển hình ảnh chính sang trái */
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover .hover-image {
+        transform: translateX(-100%);
+        /* Di chuyển hình ảnh hover vào vị trí */
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="product-container container-fluid">
+        <h2>Nổi bật / Bán chạy / Mới</h2>
+        <div class="product-grid">
+            @foreach (var product in Model)
+
+            {
+                <div class="product-item">
+                    <div class="image-container" style="position: relative;">
+                       <a href="@Url.Action("Details", "Product", new { id = product.Id })"> @if (!string.IsNullOrEmpty(product.Image0))
+                        {
+                            <img src="@product.Image0" alt="Product Image 0" class="image img-fluid">
+                        }
+                        @if (!string.IsNullOrEmpty(product.Image1))
+                        {
+                            <img src="@product.Image1" alt="Product Image 1" class="hover-image img-fluid">
+                        }</a>
+                    </div>
+                    <div class="product-info">
+                        <p class="old-price" style="display: inline-block;">@product.OldPrice VND</p>
+                        <p class="new-price" style="display: inline-block;">@product.Price VND</p>
+                        <p class="discount" style="display: inline-block;">Giá tốt</p>
+                        <p>@product.Name</p>
+                    </div><!-- Nút Edit, Delete và View Detail -->
+                    <div class="product-actions">
+                        @if (User.IsInRole("Admin")) { 
+                        <!-- Edit button -->
+                        <a href="@Url.Action("Edit", "Product", new { id = product.Id })" class="btn btn-primary">Edit</a>
+
+                        <!-- Delete button -->
+                        <form action="@Url.Action("Delete", "Product", new { id = product.Id })" method="post" style="display:inline;">
+                            @Html.AntiForgeryToken()  <!-- CSRF token -->
+
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
+                            </form>
+                        }
+
+                       
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

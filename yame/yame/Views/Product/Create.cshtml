@@ -1,0 +1,72 @@
+﻿@model Product
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+
+</head>
+<h2>Create Product</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" asp-for="Name" class="form-control" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" asp-for="Price" class="form-control" step="0.01" required />
+    </div>
+    <div class="form-group">
+        <label for="OldPrice">Old Price</label>
+        <input type="number" asp-for="OldPrice" class="form-control" step="0.01" required />
+    </div>
+    <!-- Trường chọn Brand -->
+    <div class="form-group">
+        <label for="PageName">Page Name</label>
+        <select asp-for="PageName" class="form-control">
+            <option value="NoneBranded">None Brand</option>
+            <option value="NoStyle">No Style (Gu nào cũng có)</option>
+            <option value="SeventySeven">SEVENTY SEVEN (GIÁ TỐT, JEAN 277K)</option>
+            <option value="ThoiTrangGiatot">Thời Trang Giá Tốt</option>
+            <option value="M?i">Mới</option>
+            <option value="Phukiengiatot">Phụ Kiện Giá Tốt</option>
+            <option value="SaleKetThucVongDoi">Sale Kết Thúc Vòng Đời</option>
+            <option value="AoThunCoHinh">Áo thun có hình</option>
+            <option value="AoThunTron">Áo thun trơn</option>
+            <option value="AoThunCoMau">Áo thun có màu</option>
+        </select>
+    </div>
+
+    <!-- Các trường ảnh -->
+    <div>
+        <label>Image 0</label>
+        <input type="text" asp-for="Image0" />
+    </div>
+    <div>
+        <label>Image 1</label>
+        <input type="text" asp-for="Image1" />
+    </div>
+    <div>
+        <label>Image 2</label>
+        <input type="text" asp-for="Image2" />
+    </div>
+    <div>
+        <label>Image 3</label>
+        <input type="text" asp-for="Image3" />
+    </div>
+    <div>
+        <label>Image 4</label>
+        <input type="text" asp-for="Image4" />
+    </div>
+    <div>
+        <label>Image 5</label>
+        <input type="text" asp-for="Image5" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

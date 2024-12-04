@@ -1,0 +1,42 @@
+﻿@model IEnumerable<yame.Models.Users>  // Đảm bảo đúng kiểu dữ liệu người dùng trong dự án của bạn
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+
+</head>
+
+<h2>Manage Users</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-action="DeleteUser" method="post">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit">Delete</button>
+                    </form>
+                    <form asp-action="AssignRole" method="post">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <select name="role">
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                        </select>
+                        <button type="submit">Assign Role</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

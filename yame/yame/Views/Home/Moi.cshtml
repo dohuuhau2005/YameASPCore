@@ -1,0 +1,647 @@
+﻿@{
+    ViewData["Title"] = "ThoiTrangGiaTot";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<style type="text/css">
+    .old-price,
+    .new-price,
+    discount {
+        display: inline-block;
+        margin-right: 10px;
+        /* Tạo khoảng cách giữa hai giá */
+    }
+
+
+
+    .color-options {
+        width: 55px;
+        /* Đặt kích thước cho hình ảnh */
+        height: 50px;
+        border-radius: 50%;
+        /* Tạo hình tròn cho hình ảnh nếu cần */
+        object-fit: cover;
+        /* Đảm bảo hình ảnh không bị méo */
+        padding-left: 10px;
+        gap: 10px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .w-100 {
+        display: none;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .product-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+
+    .product-grid01 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+    }
+
+    .product-item01 {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 550px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+    }
+
+    .product-item {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .product-info {
+        margin-top: 10px;
+
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .discount {
+        background-color: none;
+        color: black;
+        padding: 3px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .color-options {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 5px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 20px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 img {
+        border-radius: 8px;
+    }
+
+    .product-item01 img {
+        border-radius: 8px;
+        max-width: 520px;
+        height: auto
+    }
+
+
+    .color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+
+    .search-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Định dạng cho thanh tìm kiếm */
+    .search-bar select {
+        width: 100%;
+        max-width: 1200px;
+        /* Chiều rộng của thanh chọn lọc */
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block;
+        /* Để margin: auto hoạt động */
+        margin: 0 auto;
+        /* Căn giữa */
+    }
+
+    /* Định dạng cho banner hình ảnh */
+    .banner {
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-image {
+        width: 100%;
+        max-width: 1200px;
+        /* Giới hạn kích thước tối đa của ảnh */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        /* Đặt vị trí bên phải để hình ảnh ẩn */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        /* Hiệu ứng chuyển tiếp khi hover */
+    }
+
+    .image-container:hover .image {
+        transform: translateX(-130%);
+        /* Di chuyển hình ảnh chính sang trái */
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover .hover-image {
+        transform: translateX(-100%);
+        /* Di chuyển hình ảnh hover vào vị trí */
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+
+        <select class="filter-bar">
+            <option value="" disabled selected hidden>Lọc sản phẩm phù hợp</option>
+            <option value="all">Tất cả sản phẩm</option>
+            <option value="shirt">Áo</option>
+            <option value="pants">Quần</option>
+            <option value="shoes">Giày</option>
+        </select>
+    </div>
+    <div class="banner">
+        <!-- Banner hình ảnh -->
+        <div class="banner">
+            <img src="https://cmsv2.yame.vn/uploads/948bf9d3-4b0c-46cd-99f0-3e93afccc23b/M%e1%bb%9f_b%c3%a1n_15.11_Beginner.jpg?quality=80&w=1920&h=0"
+                 alt="Banner Non Branded" class="banner-image" />
+        </div>
+    </div>
+    <div class="product-container container-fluid">
+        <h2>Nổi bật / Bán chạy / Mới</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024211/19db0811-9ff6-2100-0158-001bc22244db.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024211/85d14c8d-3885-3500-b797-001bdc354750.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">177</p>
+                    <p class="new-price" style="display: inline-block;">142</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024212/bdeb51b5-bf8d-2d00-0d6f-001bc222fd26.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Shirt" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024212/6f8142ef-7fb0-3600-f49a-001bdc3557f5.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Shirt Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">177</p>
+                    <p class="new-price" style="display: inline-block;">142</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024156/c012d08c-fc17-1400-f450-001bc2213b40.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Sock" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024212/6f8142ef-7fb0-3600-f49a-001bdc3557f5.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Sock Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">177</p>
+                    <p class="new-price" style="display: inline-block;">142</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024157/d663f08c-bc71-1700-cae2-001bdc33446f.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Short" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-duoi-goi-vai-du-mac-nhe-bieu-tuong-dang-vua-the-thao-beginner-14-0024157/58c6055a-e64e-2400-f2cb-001bdc339db2.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Short Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">177</p>
+                    <p class="new-price" style="display: inline-block;">142</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tru-on-gian-y-nguyen-ban-ver144-0021848/70da0c3c-3f60-9502-e855-001a33f98269.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Long Pant" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tru-on-gian-y-nguyen-ban-ver144-0021848/3a19daa8-8c1e-2500-cc86-001bc6fa0474.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Long Pant" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">397</p>
+                    <p class="new-price" style="display: inline-block;">277</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-tay-wrinkle-free-19-0022489/4f37eb66-b42e-9700-098d-001ad35b4251.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Polo Shirt" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-tay-wrinkle-free-19-0022489/b593abf4-ad58-6600-46b5-001bc707c90c.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Polo Shirt" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">177</p>
+                    <p class="new-price" style="display: inline-block;">147</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023386/faa545ab-effb-4b00-070f-001b512d9063.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023716/d40a38db-065f-3600-fe3e-001bc5683787.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023383/a0cc46b1-3fd0-4800-1b80-001b512c3d67.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023716/d40a38db-065f-3600-fe3e-001bc5683787.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">117</p>
+                    <p class="new-price" style="display: inline-block;">77</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid01">
+            <!-- Product 9 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-tren-goi-vai-du-mong-nhe-bieu-tuong-dang-vua-the-thao-beginner-04-0023152/93785b62-e481-0500-445e-001b541a1907.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-tren-goi-vai-du-mong-nhe-bieu-tuong-dang-vua-the-thao-beginner-04-0023152/7754634b-6573-1900-d476-001bc4ae42e7.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">117</p>
+                    <p class="new-price" style="display: inline-block;">77</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options01">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 "></div>
+            <!-- Product 10 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023389/6b13121d-7c47-4e00-6f1f-001b512dd0cd.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023389/490ca388-1824-7900-3133-001bc191ac9c.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">127</p>
+                    <p class="new-price" style="display: inline-block;">97</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options01 row-md-col-6">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid">
+            <!-- Product 11 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023388/9d45d89d-8ea1-4d00-6c81-001b512dbbec.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023388/630a6c54-bcd5-7800-b435-001bc1919d4d.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">117</p>
+                    <p class="new-price" style="display: inline-block;">77</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-tren-goi-vai-thun-co-gian-tron-dang-vua-gia-tot-no-brand-05-0023720/4894f8ba-fcfe-0100-e4b7-001baab14ec3.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/quan-short-lung-thun-tren-goi-vai-thun-co-gian-tron-dang-vua-gia-tot-no-brand-05-0023720/0e25e8fe-d076-4000-3290-001bc56abd6e.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">127</p>
+                    <p class="new-price" style="display: inline-block;">97</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-so-mi-co-be-tay-dai-tham-hut-soi-nhan-tao-tron-dang-vua-gia-tot-non-branded-19-0024013/7926c25c-b6bb-1400-9652-001ba6a973e2.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-so-mi-co-be-tay-dai-tham-hut-soi-nhan-tao-tron-dang-vua-gia-tot-non-branded-19-0024013/7d4038c7-0704-7e00-d17e-001bc57d56a5.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="new-price" style="display: inline-block;">197</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tru-on-gian-y-nguyen-ban-ver144-0021849/5e2eb411-c6f8-6a00-30bc-001a33e02873.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tru-on-gian-y-nguyen-ban-ver144-0021849/c78a8407-9403-2600-e2f5-001bc6fa0e4a.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">127</p>
+                    <p class="new-price" style="display: inline-block;">97</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="color:white;width:100%;height:40PX">
+        @* cách ra *@
+
+    </div>
+</body>
+
+</html>
+
+

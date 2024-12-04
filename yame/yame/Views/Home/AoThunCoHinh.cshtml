@@ -1,0 +1,488 @@
+﻿
+@{
+    ViewData["Title"] = "AoThunCoHinh";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+
+</head>
+<style type="text/css">
+
+    .old-price, .new-price, discount {
+        display: inline-block;
+        margin-right: 10px; /* Tạo khoảng cách giữa hai giá */
+    }
+
+    .color-options {
+        width: 55px; /* Đặt kích thước cho hình ảnh */
+        height: 50px;
+        border-radius: 50%; /* Tạo hình tròn cho hình ảnh nếu cần */
+        object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+        padding-left: 10px;
+        gap: 10px; /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .tieude {
+        color: black;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .product-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+
+    .product-grid01 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-item01 {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 550px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .product-item {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    .product-info {
+        margin-top: 10px;
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .discount {
+        background-color: none;
+        color: black;
+        padding: 3px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .color-options {
+        margin-top: 10px;
+        display: flex; /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 5px; /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 {
+        margin-top: 10px;
+        display: flex; /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 20px; /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+        .color-options01 img {
+            border-radius: 8px;
+        }
+
+    .product-item01 img {
+        border-radius: 8px;
+        max-width: 520px;
+        height: auto
+    }
+
+
+    .color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+
+    .search-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Định dạng cho thanh tìm kiếm */
+    .search-bar select {
+        width: 100%;
+        max-width: 1200px; /* Chiều rộng của thanh chọn lọc */
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block; /* Để margin: auto hoạt động */
+        margin: 0 auto; /* Căn giữa */
+    }
+
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 100%; /* Đặt vị trí bên phải để hình ảnh ẩn */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.5s ease; /* Hiệu ứng chuyển tiếp khi hover */
+    }
+
+    .image-container:hover .image {
+        transform: translateX(-130%); /* Di chuyển hình ảnh chính sang trái */
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover .hover-image {
+        transform: translateX(-100%); /* Di chuyển hình ảnh hover vào vị trí */
+    }
+</style>
+
+<body>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+
+        <select class="filter-bar">
+            <option value="" disabled selected hidden>Lọc sản phẩm phù hợp</option>
+            <option value="all">Tất cả sản phẩm</option>
+            <option value="shirt">Áo</option>
+            <option value="pants">Quần</option>
+            <option value="shoes">Giày</option>
+        </select>
+    </div>
+
+    <div class="product-container container-fluid">
+        <h2>Nổi bật / Bán chạy / Mới</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;"><a asp-action="index" asp-area="" asp-controller="Product">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023219/4cf045c3-ee50-fe00-47d0-001b4939ad6e.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023219/8e1fff56-1bb9-0a00-1b29-001bc1757f3c.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid"></a>
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Vải Cá Sấu 4 Chiều Thấm Hút Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 13 Vol 24 </p>
+                    <p><span class="old-price">97</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023217/49ac599c-c5e2-e000-4ddd-001b4939174a.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023221/f312bf52-2306-1c01-223d-001b493a1381.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023220/2172cb30-f2e2-0d01-2277-001b4939e16c.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023218/de5aca84-e45d-ef00-7b67-001b49394bff.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023215/628cada7-f209-2900-f31e-001b3edd6b6b.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023215/56e38c0e-ed9a-0600-c61f-001bc1734174.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Mặc Thoải Mái Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 10 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023216/0d67b07a-3bc7-2e00-01fd-001b3edd82ec.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023214/89e5d3b1-f0ee-2400-7d78-001b3edd5204.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023213/95381261-7c40-1f00-959d-001b3edd379b.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023212/860180d8-374e-1a00-67c7-001b3edd2039.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023216/0d67b07a-3bc7-2e00-01fd-001b3edd82ec.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023216/3385063b-4c60-0700-c28e-001bc1736944.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Mặc Thoải Mái Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 10 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023215/628cada7-f209-2900-f31e-001b3edd6b6b.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023214/89e5d3b1-f0ee-2400-7d78-001b3edd5204.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023213/95381261-7c40-1f00-959d-001b3edd379b.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023212/860180d8-374e-1a00-67c7-001b3edd2039.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023551/693f8e5a-e9e1-5d00-0f0e-001b810fa944.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023551/78b4eca6-8033-7600-7741-001bc7092575.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Co Giãn Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 44 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023552/4c567ec9-23ac-6b00-6fae-001b8110067a.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023553/c2f69c83-634b-7900-f83a-001b811036ba.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m130-0023911/e711855c-cc1d-8800-e81e-001bb67b671e.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m130-0023911/af020aae-a843-2800-c91e-001bc252faa4.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Co Giãn Biểu Tượng Dáng Vừa Giá Tốt No Style M130 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m130-0023910/c27232ca-8f1c-7d00-6b47-001bb67ae53d.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023217/49ac599c-c5e2-e000-4ddd-001b4939174a.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023217/3a3c979b-adc8-0800-c746-001bc1754e0e.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Vải Cá Sấu 4 Chiều Thấm Hút Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 13 Vol 24 </p>
+                    <p><span class="old-price">127</span> <span class="new-price">97</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023219/4cf045c3-ee50-fe00-47d0-001b4939ad6e.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023221/f312bf52-2306-1c01-223d-001b493a1381.jpg?w=100&h=140&c=true&ntf=false "></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023220/2172cb30-f2e2-0d01-2277-001b4939e16c.jpg?w=100&h=140&c=true&ntf=false "></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-ca-sau-4-chieu-tham-hut-bieu-tuong-dang-rong-on-gian-seventy-seven-13-0023218/de5aca84-e45d-ef00-7b67-001b49394bff.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m130-0023910/c27232ca-8f1c-7d00-6b47-001bb67ae53d.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m130-0023910/9412ef91-89fb-2900-b4fc-001bc253070f.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Co Giãn Biểu Tượng Dáng Vừa Giá Tốt No Style M130 Vol 24 </p>
+                    <p><span class="old-price">97</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m130-0023911/e711855c-cc1d-8800-e81e-001bb67b671e.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023552/4c567ec9-23ac-6b00-6fae-001b8110067a.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023552/df13b43f-e4b5-7500-41cb-001bc70915e7.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Co Giãn Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 44 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023551/693f8e5a-e9e1-5d00-0f0e-001b810fa944.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-bieu-tuong-dang-rong-gia-tot-seventy-seven-44-0023553/c2f69c83-634b-7900-f83a-001b811036ba.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid01">
+            <!-- Product 9 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-02-0022708/32909fef-c041-4200-0fcc-001ae3b66ae0.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-02-0022708/115c928c-2a0c-0400-33ce-001bc15604d9.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Cá Sấu 4 Chiều Thấm Hút Biểu Tượng Dáng Vừa Đơn Giản Seventy Seven 03 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options01">
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-02-0022709/12f61bb1-b2e3-4e00-9b00-001ae3b6d0b1.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-02-0022712/a058794e-54c4-7200-3c51-001ae3b76111.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-02-0022711/376dc862-88e7-6600-d335-001ae3b7364f.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-02-0022710/596b51cd-091f-5a00-18a3-001ae3b6ee67.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <!-- Product 10 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023214/89e5d3b1-f0ee-2400-7d78-001b3edd5204.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023214/07fa2a06-f78a-0500-cea4-001bc1732bad.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Mặc Thoải Mái Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 10 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options01 row-md-col-6">
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023215/628cada7-f209-2900-f31e-001b3edd6b6b.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023216/0d67b07a-3bc7-2e00-01fd-001b3edd82ec.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023213/95381261-7c40-1f00-959d-001b3edd379b.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023212/860180d8-374e-1a00-67c7-001b3edd2039.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid">
+            <!-- Product 11 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-4-chieu-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m111-0023598/c529c76b-a913-0100-cbad-001b74817f0c.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-4-chieu-co-gian-bieu-tuong-dang-vua-gia-tot-no-style-m111-0023598/3540f288-5be5-6b00-d445-001bc254b2b9.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Vải Cotton 4 Chiều Co Giãn Biểu Tượng Dáng Vừa Giá Tốt No Style M111 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023212/860180d8-374e-1a00-67c7-001b3edd2039.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023212/b3785264-79ec-0300-623a-001bc172d696.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Mặc Thoải Mái Biểu Tượng Dáng Rộng Giá Tốt Seventy Seven 10 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023215/628cada7-f209-2900-f31e-001b3edd6b6b.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023216/0d67b07a-3bc7-2e00-01fd-001b3edd82ec.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023214/89e5d3b1-f0ee-2400-7d78-001b3edd5204.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-mac-thoai-mai-bieu-tuong-dang-rong-on-gian-seventy-seven-10-0023213/95381261-7c40-1f00-959d-001b3edd379b.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m13-0023327/bd1e167d-32ba-4600-ba56-001b5901c10f.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m13-0023327/5805404c-9300-0700-6844-001bc24d8cb5.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Vải Cotton 2 Chiều Thấm Hút Biểu Tượng Dáng Rộng Giá Tốt No Style M13 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m13-0023325/ee985386-1ec8-3200-87f5-001b590168de.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m13-0023324/fd06e2e9-6ea5-2800-46bf-001b59013990.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m13-0023326/db1734fc-a562-3c00-87b7-001b59019330.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m13-0023323/64029539-3ee4-1e00-eebf-001b590100b6.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m13-0023321/a47051fc-70aa-0600-c273-001b58ffb8e3.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-4-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m19-0023353/abce1e3a-458e-2e00-3f1f-001b73ac3cca.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-4-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m19-0023353/44e66cd0-854b-b900-ba1a-001bc31c0830.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-4-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m19-0023355/7afd780c-68e8-4c00-d12c-001b73ad2dd0.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-4-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m19-0023354/c2fec985-c3e0-3d00-e80c-001b73acfa8e.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-4-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m19-0023352/dc0553dc-9340-1f00-8b00-001b73a9b735.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-4-chieu-tham-hut-bieu-tuong-dang-rong-gia-tot-no-style-m19-0023352/dc0553dc-9340-1f00-8b00-001b73a9b735.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");
+    }
+}
+
+

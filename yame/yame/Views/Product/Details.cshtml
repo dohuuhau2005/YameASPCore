@@ -1,0 +1,234 @@
+﻿@model yame.Models.Product
+@{
+    var descriptions = new List<string>
+    {
+        "Chất liệu cotton co giãn, phong cách năng động.",
+        "Thiết kế thời trang, mang lại sự thoải mái.",
+        "Màu sắc trang nhã, dễ dàng phối đồ.",
+        "Thích hợp cho mọi lứa tuổi, phù hợp nhiều dịp.",
+        "Sản phẩm chất lượng cao, giá cả hợp lý.",
+        "Kiểu dáng hiện đại, dễ phối với nhiều phụ kiện.",
+        "Dệt gân co giãn tốt, thoáng khí, bền bỉ, giữ form tốt.",
+        "Đa dạng màu sắc, thích hợp cho các hoạt động thể thao, đồng thời vẫn giữ được vẻ thời trang và phong cách cho người sử dụng.2. Ưu điểm: Đa dạng màu sắc, thích hợp cho các hoạt động thể thao, đồng thời vẫn giữ được vẻ thời trang và phong cách cho người sử dụng.",
+        "Thoải mái vận động, giữ màu lâu, tiết kiệm thời gian, co giãn tốt.",
+        "Kỹ thuật thêu 2D cho phép tạo ra các chi tiết nhỏ và phức tạp với độ chính xác cao, đồng thời tăng tính thẩm mỹ cho sản phẩm." ,"Chất liệu vải mềm mại, thoáng khí, mang lại cảm giác thoải mái suốt cả ngày.",
+        "Thiết kế hiện đại, phù hợp với nhiều phong cách và dịp khác nhau.",
+        "Sản phẩm đa dạng về màu sắc, dễ dàng phối hợp với nhiều loại trang phục.",
+        "Dễ dàng giặt giũ và bảo quản, giữ được hình dáng và màu sắc lâu dài.",
+        "Tạo nên vẻ ngoài sành điệu và tự tin, hoàn hảo cho những ai yêu thích sự mới mẻ.",
+        "Thích hợp cho cả đi làm, đi chơi hay các buổi gặp gỡ bạn bè.",
+        "Phong cách trẻ trung, năng động, phù hợp với mọi lứa tuổi.",
+        "Chất liệu cao cấp giúp tôn lên vẻ đẹp tự nhiên của người mặc.",
+        "Mẫu mã thời thượng, đem lại sự sang trọng và quyến rũ.",
+        "Phù hợp với nhiều mùa trong năm, dễ dàng phối với áo khoác hay phụ kiện.",
+        "Sản phẩm được may tỉ mỉ, đảm bảo độ bền và độ chính xác cao.",
+        "Mang lại sự thoải mái và linh hoạt cho người mặc trong mọi hoạt động.",
+        "Phù hợp với những người yêu thích sự đơn giản nhưng thanh lịch.",
+        "Dễ dàng tạo điểm nhấn nổi bật khi kết hợp với các phụ kiện.",
+        "Với thiết kế tối giản, sản phẩm này dễ dàng kết hợp với nhiều trang phục khác.",
+        "Sản phẩm thời trang hàng đầu cho những ai yêu thích sự tiện lợi và phong cách."
+
+    };
+
+    // Lấy mô tả ngẫu nhiên
+    var random = new Random();
+    var selectedDescriptions = descriptions.OrderBy(x => random.Next()).Take(5).ToList();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .product-images {
+            flex: 2;
+            padding: 20px;
+            height: 450px; /* Fixed height for the image container */
+            overflow-y: auto; /* Allows vertical scrolling */
+            border: 1px solid #ddd;
+        }
+
+        .product-images img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-details {
+            flex: 3;
+            padding: 20px;
+        }
+
+        .product-details h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        .product-details p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .price {
+            margin: 20px 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+        }
+
+        .new-price {
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        .discount-info {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .size-options {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .size-options li {
+            margin-bottom: 10px;
+        }
+
+        .size-options button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .product-description {
+            margin-top: 20px;
+        }
+
+        .product-description p {
+            margin: 5px 0;
+        }
+
+        .product-description ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .proinfo-images {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .proinfo-images img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <!-- Product images with scroll feature -->
+        <div class="product-images">
+            @if (!string.IsNullOrEmpty(Model.Image0))
+            {
+                <img src="@Model.Image0" alt="Product Image 0" class="image img-fluid">
+            }
+            @if (!string.IsNullOrEmpty(Model.Image1))
+            {
+                <img src="@Model.Image1" alt="Product Image 1" class="hover-image img-fluid">
+            }
+            @if (!string.IsNullOrEmpty(Model.Image2))
+            {
+                <img src="@Model.Image2" alt="Product Image 2" class="image img-fluid">
+            }
+            @if (!string.IsNullOrEmpty(Model.Image3))
+            {
+                <img src="@Model.Image3" alt="Product Image 3" class="image img-fluid">
+            }
+        </div>
+
+        <!-- Product details -->
+        <div class="product-details">
+            <h1>@Model.Name</h1>
+
+            <div class="price">
+                @if (Model.OldPrice > 0)
+                {
+                    <span class="old-price">@Model.OldPrice VND</span>
+                }
+                <span class="new-price">@Model.Price VND</span>
+            </div>
+            <p class="discount-info">Giá Tốt áp dụng đến hết ngày 31/10/2024</p>
+
+     
+
+            <!-- Add to cart form -->
+            <form action="/Cart/AddToCart" method="post">
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <input type="number" name="quantity" value="1" min="1" class="quantity-input" />
+                <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
+            </form>
+
+            <!-- Product description -->
+            <div class="product-description">
+                <p><strong>Thông tin chi tiết:</strong></p>
+                <ul>
+                    <li style="list-style:none">Chất liệu: Vải Cotton</li>
+                    <li style="list-style:none">1. Ưu điểm : @selectedDescriptions[0]</li>
+                    <li style="list-style:none">2. Kĩ thuật : @selectedDescriptions[1]</li>
+                    <li style="list-style:none">3. Tiêu chuẩn : @selectedDescriptions[2]</li>
+                    <li style="list-style:none">4. Thẩm Mĩ : @selectedDescriptions[3]</li>
+                    <li style="list-style:none">5. @selectedDescriptions[4]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h3 class="mt-4">Các sản phẩm liên quan</h3>
+    <div class="row">
+        @foreach (var randomProduct in Model.RandomProducts)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="@randomProduct.Image0" alt="@randomProduct.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@randomProduct.Name</h5>
+                        <p class="card-text">Giá: @randomProduct.Price VND</p>
+                        <a href="@Url.Action("Details", "Product", new { id = randomProduct.Id })" class="btn btn-primary btn-sm">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</body>
+</html>

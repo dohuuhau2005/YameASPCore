@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "GioiThieu";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<style type="text/css">
+
+       /* Đảm bảo rằng container con có thể co giãn khi thu nhỏ màn hình */
+    .con {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Đảm bảo văn bản hiển thị linh hoạt */
+    .cte {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 800px;  /* Để văn bản không quá rộng */
+    }
+
+    /* Đảm bảo hình ảnh có thể co giãn */
+    .banner img {
+        width: 100%;
+        height: auto;
+        max-width: 100%px; /* Giới hạn kích thước hình ảnh */
+        margin: 0 auto;
+    }
+
+    /* Đảm bảo layout phù hợp với màn hình nhỏ */
+    }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/test1.css">
+</head>
+<body>
+    <h2>YaMe mang ý nghĩa: You are My everything</h2>
+    <div class="banner">
+        <img src="https://cmsv2.yame.vn/uploads/0a88f736-7a6c-4da3-b247-1a8d9207f3d3/th%e1%bb%9di_trang_yame.jpg?quality=80&w=1280&h=0" class="banner-image" />
+    </div>
+    <div class="con">
+        <div class="cte">
+            sơ  lượt:<br />
+            Được thành lập vào năm 2010, YaMe bắt đầu từ một cửa hàng thời trang nhỏ nằm sâu trong lòng Quận 10.<br />
+
+            Đến nay, YaMe đã có mặt ở khắp các quận huyện TP. Hồ Chí Minh và các tỉnh thành Miền Tây, Đông Nam Bộ, Tây Nguyên với 42 cửa hàng.<br />
+
+            YaMe luôn biết ơn và trân trọng sự yêu thương của khách hàng. Thật tự hào khi được gắn bó với nhiều thế hệ từ thời học sinh, sinh viên cho đến khi đi làm.<br />
+        </div>
+        <div class="banner">
+            <img src="https://cmsv2.yame.vn/uploads/de07057e-9fd2-4f24-8559-ca053bbeeaef/thoi_trang_nam.jpg?quality=80&w=1280&h=0" />
+        </div>
+    </div>
+
+</body>

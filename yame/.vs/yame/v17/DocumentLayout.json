@@ -1,0 +1,523 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\shared\\_layoutmain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\shared\\_layoutmain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\home\\thanhtoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\home\\thanhtoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\aothuncohinh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\aothuncohinh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\searchresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\searchresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\viewmodels\\productdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\viewmodels\\productdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\account\\manageusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\account\\manageusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\home\\gioithieu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\home\\gioithieu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\home\\cuahang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\home\\cuahang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\seventyseven.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\seventyseven.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\saleketthucvongdoi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\saleketthucvongdoi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\phukiengiatot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\phukiengiatot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\nostyle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\nostyle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\nonbranded.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\nonbranded.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\moi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\moi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\aothuncomau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\aothuncomau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\product\\aothuntron.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\product\\aothuntron.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\cart\\emptycart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\cart\\emptycart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|h:\\desktop\\webaddnewway\\yameaspcore-master\\yameaspcore-master\\yameaspcore-master\\yame\\yame\\views\\home\\nostyle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C4C93CB-A120-41C5-8435-6BCC04E03C9D}|yame\\yame.csproj|solutionrelative:yame\\views\\home\\nostyle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 181,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "yame\\Controllers\\AccountController.cs",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "yame\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAADwv6YAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T16:08:46.272Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ManageUsers.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Account\\ManageUsers.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Account\\ManageUsers.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Account\\ManageUsers.cshtml",
+              "RelativeToolTip": "yame\\Views\\Account\\ManageUsers.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T16:02:20.754Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Product.cs",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "yame\\Models\\Product.cs",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Models\\Product.cs",
+              "RelativeToolTip": "yame\\Models\\Product.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T16:52:57.407Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\Details.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAALgAAAAAAAAAAAAswOcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T14:08:14.498Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\_ViewStart.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "yame\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T00:48:24.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ScaffoldingReadMe.txt",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\ScaffoldingReadMe.txt",
+              "RelativeDocumentMoniker": "yame\\ScaffoldingReadMe.txt",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\ScaffoldingReadMe.txt",
+              "RelativeToolTip": "yame\\ScaffoldingReadMe.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-27T00:47:51.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Program.cs",
+              "RelativeDocumentMoniker": "yame\\Program.cs",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Program.cs",
+              "RelativeToolTip": "yame\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T00:47:52.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ThanhToan.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\ThanhToan.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Home\\ThanhToan.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\ThanhToan.cshtml",
+              "RelativeToolTip": "yame\\Views\\Home\\ThanhToan.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T23:41:17.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "yame\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T23:39:23.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProductDetailsViewModel.cs",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\ViewModels\\ProductDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "yame\\ViewModels\\ProductDetailsViewModel.cs",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\ViewModels\\ProductDetailsViewModel.cs",
+              "RelativeToolTip": "yame\\ViewModels\\ProductDetailsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T16:45:39.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\appsettings.json",
+              "RelativeDocumentMoniker": "yame\\appsettings.json",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\appsettings.json",
+              "RelativeToolTip": "yame\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAC3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-26T16:31:39.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LayoutMain.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Shared\\_LayoutMain.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Shared\\_LayoutMain.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Shared\\_LayoutMain.cshtml",
+              "RelativeToolTip": "yame\\Views\\Shared\\_LayoutMain.cshtml",
+              "ViewState": "AgIAAFkBAAAAAAAAAAAAAGEBAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T16:30:16.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SearchResults.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\SearchResults.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\SearchResults.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\SearchResults.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\SearchResults.cshtml",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAswCgBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T16:29:57.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T14:31:40.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GioiThieu.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\GioiThieu.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Home\\GioiThieu.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\GioiThieu.cshtml",
+              "RelativeToolTip": "yame\\Views\\Home\\GioiThieu.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T14:06:49.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CuaHang.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\CuaHang.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Home\\CuaHang.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\CuaHang.cshtml",
+              "RelativeToolTip": "yame\\Views\\Home\\CuaHang.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAA4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T14:03:39.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "yame\\Controllers\\HomeController.cs",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "yame\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwE8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:01:31.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AoThunCoHinh.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\AoThunCoHinh.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\AoThunCoHinh.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\AoThunCoHinh.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\AoThunCoHinh.cshtml",
+              "ViewState": "AgIAABABAAAAAAAAAAAqwBUBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T12:46:30.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "yame\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "yame\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T12:03:51.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "NonBranded.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\NonBranded.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\NonBranded.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\NonBranded.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\NonBranded.cshtml",
+              "ViewState": "AgIAABoBAAAAAAAAAAAAACUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T16:51:10.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SeventySeven.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\SeventySeven.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\SeventySeven.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\SeventySeven.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\SeventySeven.cshtml",
+              "ViewState": "AgIAAAABAAAAAAAAAAAAAA4BAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:51:19.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SaleKetThucVongDoi.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\SaleKetThucVongDoi.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\SaleKetThucVongDoi.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\SaleKetThucVongDoi.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\SaleKetThucVongDoi.cshtml",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAAAA4BAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:50:51.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Phukiengiatot.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Phukiengiatot.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\Phukiengiatot.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Phukiengiatot.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\Phukiengiatot.cshtml",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAAAA4BAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:50:39.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NoStyle.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\NoStyle.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\NoStyle.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\NoStyle.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\NoStyle.cshtml",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAAAA4BAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:50:20.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Moi.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Moi.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\Moi.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Moi.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\Moi.cshtml",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAAAA4BAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:50:01.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AoThunTron.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\AoThunTron.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\AoThunTron.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\AoThunTron.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\AoThunTron.cshtml",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAAACQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:49:41.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AoThunCoMau.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\AoThunCoMau.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\AoThunCoMau.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\AoThunCoMau.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\AoThunCoMau.cshtml",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAAACQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:49:20.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "EmptyCart.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Cart\\EmptyCart.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Cart\\EmptyCart.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Cart\\EmptyCart.cshtml",
+              "RelativeToolTip": "yame\\Views\\Cart\\EmptyCart.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T15:02:25.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "NoStyle.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\NoStyle.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Home\\NoStyle.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Home\\NoStyle.cshtml",
+              "RelativeToolTip": "yame\\Views\\Home\\NoStyle.cshtml",
+              "ViewState": "AgIAACwCAAAAAAAAAAAAALUBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T05:43:52.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "yame\\Controllers\\ProductController.cs",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "yame\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwCgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T05:33:01.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "yame\\Views\\Product\\Create.cshtml",
+              "ToolTip": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "yame\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T05:24:18.139Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

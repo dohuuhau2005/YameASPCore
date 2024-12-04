@@ -1,0 +1,512 @@
+﻿<style type="text/css">
+
+    .old-price, .new-price, discount {
+        display: inline-block;
+        margin-right: 10px; /* Tạo khoảng cách giữa hai giá */
+    }
+
+    .color-options {
+        width: 55px; /* Đặt kích thước cho hình ảnh */
+        height: 50px;
+        border-radius: 50%; /* Tạo hình tròn cho hình ảnh nếu cần */
+        object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+        padding-left: 10px;
+        gap: 10px; /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .tieude {
+        color: black;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .product-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+
+    .product-grid01 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-item01 {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 550px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .product-item {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    .product-info {
+        margin-top: 10px;
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .discount {
+        background-color: none;
+        color: black;
+        padding: 3px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .color-options {
+        margin-top: 10px;
+        display: flex; /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 5px; /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 {
+        margin-top: 10px;
+        display: flex; /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 20px; /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+        .color-options01 img {
+            border-radius: 8px;
+        }
+
+    .product-item01 img {
+        border-radius: 8px;
+        max-width: 520px;
+        height: auto
+    }
+
+
+    .color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+
+    .search-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Định dạng cho thanh tìm kiếm */
+    .search-bar select {
+        width: 100%;
+        max-width: 1200px; /* Chiều rộng của thanh chọn lọc */
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block; /* Để margin: auto hoạt động */
+        margin: 0 auto; /* Căn giữa */
+    }
+
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 100%; /* Đặt vị trí bên phải để hình ảnh ẩn */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.5s ease; /* Hiệu ứng chuyển tiếp khi hover */
+    }
+
+    .image-container:hover .image {
+        transform: translateX(-130%); /* Di chuyển hình ảnh chính sang trái */
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover .hover-image {
+        transform: translateX(-100%); /* Di chuyển hình ảnh hover vào vị trí */
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/test1.css">
+
+</head>
+<body>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+
+        <select class="filter-bar">
+            <option value="" disabled selected hidden>Lọc sản phẩm phù hợp</option>
+            <option value="all">Tất cả sản phẩm</option>
+            <option value="shirt">Áo</option>
+            <option value="pants">Quần</option>
+            <option value="shoes">Giày</option>
+        </select>
+    </div>
+
+    <div class="product-container container-fluid">
+        <h2>Nổi bật / Bán chạy / Mới</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023140/d8e2e9b1-856e-2a00-55ee-001b51198597.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023140/da874635-b590-0e00-1526-001bc4aa2fb2.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Thoáng Mát Trơn Dáng Vừa Thể Thao Beginner 01 Vol 24 </p>
+                    <p><span class="old-price">97</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023138/43fa96b9-b78d-1100-5a7e-001b51129ee1.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023137/a9239c1f-4cc0-1000-5e10-001b5112825d.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023135/ffec2fb9-b982-0e00-ddad-001b51122493.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023139/ca1ce153-49d8-1200-444c-001b5112c394.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023136/a53fe67f-af69-0f00-5dea-001b511264bf.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023716/17a56585-3b12-af00-e237-001b94b14c29.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023716/d40a38db-065f-3600-fe3e-001bc5683787.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023715/84a7f4de-9e48-a500-42e0-001b94b122ac.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023719/e42b2599-7c5c-d000-0504-001b94b27133.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023717/28a49cf4-9bf6-ba00-7fe1-001b94b1c186.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023718/d9577ea7-2f05-c500-6fd2-001b94b1ffa9.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023714/4a5b55ad-5cb5-9b00-ff65-001b94b0f6be.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022752/96bacd81-22c2-1100-2c7f-001ad34e76cb.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022752/1b50c99b-fc9d-6900-e290-001bc63d7238.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Vải Cotton 4 Chiều Mặc Mát Trơn Dáng Vừa Cao Cấp Cool Touch 07 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022754/2a755a1a-4ee7-0100-3dc1-001ad4d22453.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022753/62ee5d14-7fab-1200-fa87-001ad34e9a5c.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022751/66e03ecc-053a-1600-5b26-001ad4cfcd94.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022754/2a755a1a-4ee7-0100-3dc1-001ad4d22453.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022754/5d24e307-b22d-6700-5ba4-001bc63d1dea.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Vải Cotton 4 Chiều Mặc Mát Trơn Dáng Vừa Cao Cấp Cool Touch 07 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022752/96bacd81-22c2-1100-2c7f-001ad34e76cb.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022753/62ee5d14-7fab-1200-fa87-001ad34e9a5c.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022751/66e03ecc-053a-1600-5b26-001ad4cfcd94.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023715/84a7f4de-9e48-a500-42e0-001b94b122ac.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023715/3e46a418-5f5c-3700-3f58-001bc5684ac3.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023716/17a56585-3b12-af00-e237-001b94b14c29.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023719/e42b2599-7c5c-d000-0504-001b94b27133.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023717/28a49cf4-9bf6-ba00-7fe1-001b94b1c186.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023718/d9577ea7-2f05-c500-6fd2-001b94b1ffa9.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023714/4a5b55ad-5cb5-9b00-ff65-001b94b0f6be.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023710/b03765ca-1cbc-6c00-7da6-001b94afc184.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023710/d7f8314e-13eb-2f00-5d40-001bc5677f79.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="old-price">127</span> <span class="new-price">97</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023707/dd397c1f-815f-4e00-9c12-001b94aac134.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023708/32961d01-c15b-5800-6a3e-001b94af4513.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023709/4f7dd266-28cb-6200-4f16-001b94af7964.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023713/098e0425-d7ad-9000-6ba4-001b94b07242.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023712/35249f21-7190-8500-ba87-001b94b051b4.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023138/43fa96b9-b78d-1100-5a7e-001b51129ee1.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023138/339c8043-832e-0c00-8eb7-001bc4a9be71.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Thoáng Mát Trơn Dáng Vừa Thể Thao Beginner 01 Vol 24 </p>
+                    <p><span class="old-price">97</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023140/d8e2e9b1-856e-2a00-55ee-001b51198597.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023137/a9239c1f-4cc0-1000-5e10-001b5112825d.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023135/ffec2fb9-b982-0e00-ddad-001b51122493.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023139/ca1ce153-49d8-1200-444c-001b5112c394.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023136/a53fe67f-af69-0f00-5dea-001b511264bf.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022753/62ee5d14-7fab-1200-fa87-001ad34e9a5c.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022753/2ba61791-4f52-6800-9136-001bc63d2e77.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Vải Cotton 4 Chiều Mặc Mát Trơn Dáng Vừa Cao Cấp Cool Touch 07 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022752/96bacd81-22c2-1100-2c7f-001ad34e76cb.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022754/2a755a1a-4ee7-0100-3dc1-001ad4d22453.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-polo-cool-touch-07-0022751/66e03ecc-053a-1600-5b26-001ad4cfcd94.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid01">
+            <!-- Product 9 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023719/e42b2599-7c5c-d000-0504-001b94b27133.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023719/71c7efa0-0382-3300-c6b9-001bc56808cd.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options01">
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023716/17a56585-3b12-af00-e237-001b94b14c29.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023715/84a7f4de-9e48-a500-42e0-001b94b122ac.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023717/28a49cf4-9bf6-ba00-7fe1-001b94b1c186.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023718/d9577ea7-2f05-c500-6fd2-001b94b1ffa9.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023714/4a5b55ad-5cb5-9b00-ff65-001b94b0f6be.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <!-- Product 10 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023717/28a49cf4-9bf6-ba00-7fe1-001b94b1c186.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023717/7ecd0ffc-0faa-3500-5151-001bc56827b1.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="new-price">257</span></p>
+                    <div class="color-options01 row-md-col-6">
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023716/17a56585-3b12-af00-e237-001b94b14c29.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023715/84a7f4de-9e48-a500-42e0-001b94b122ac.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023719/e42b2599-7c5c-d000-0504-001b94b27133.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023718/d9577ea7-2f05-c500-6fd2-001b94b1ffa9.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-2"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-02-0023714/4a5b55ad-5cb5-9b00-ff65-001b94b0f6be.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid">
+            <!-- Product 11 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023137/a9239c1f-4cc0-1000-5e10-001b5112825d.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023137/a33e1f33-347b-0b00-36eb-001bc4a9aa2a.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn Tay Ngắn Sợi Nhân Tạo Thoáng Mát Trơn Dáng Vừa Thể Thao Beginner 01 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023140/d8e2e9b1-856e-2a00-55ee-001b51198597.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023138/43fa96b9-b78d-1100-5a7e-001b51129ee1.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023135/ffec2fb9-b982-0e00-ddad-001b51122493.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023139/ca1ce153-49d8-1200-444c-001b5112c394.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-01-0023136/a53fe67f-af69-0f00-5dea-001b511264bf.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023707/dd397c1f-815f-4e00-9c12-001b94aac134.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023707/89297763-023c-3200-33ce-001bc567af08.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023710/b03765ca-1cbc-6c00-7da6-001b94afc184.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023708/32961d01-c15b-5800-6a3e-001b94af4513.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023709/4f7dd266-28cb-6200-4f16-001b94af7964.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023713/098e0425-d7ad-9000-6ba4-001b94b07242.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-soi-nhan-tao-co-gian-tron-dang-vua-gia-tot-no-brand-01-0023712/35249f21-7190-8500-ba87-001b94b051b4.jpg?w=100&h=140&c=true&ntf=false"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023144/9e2e5245-6a84-1700-f795-001b5116e9ac.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023144/d83d96aa-cb41-1200-3eaf-001bc4aaeecb.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023143/2406bf7c-6939-1600-b587-001b511469d8.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023141/e7e5ef77-5b76-1400-5b5d-001b51142ef4.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023146/d7b034f0-0e04-1900-a7d3-001b511743c5.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023142/ed9a18fe-81f7-1500-0742-001b51144f94.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023145/844b2b40-eef0-1800-4ba8-001b51172672.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023143/2406bf7c-6939-1600-b587-001b511469d8.jpg?w=540&h=756&c=true&ntf=false" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023143/a4f0e43f-ccb0-1100-3b55-001bc4aad684.jpg?w=540&h=756&c=true&ntf=false" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="tieude"> Áo Thun Cổ Tròn 3 Lỗ Sợi Nhân Tạo Co Giãn Trơn Dáng Vừa Giá Tốt Non Branded 02 Vol 24 </p>
+                    <p><span class="old-price">117</span> <span class="new-price">77</span> Giá tốt</p>
+                    <div class="color-options">
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023144/9e2e5245-6a84-1700-f795-001b5116e9ac.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023141/e7e5ef77-5b76-1400-5b5d-001b51142ef4.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023146/d7b034f0-0e04-1900-a7d3-001b511743c5.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023142/ed9a18fe-81f7-1500-0742-001b51144f94.jpg?w=100&h=140&c=true&ntf=false"></div>
+                        <div class="col-md-10"><img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-3-lo-soi-nhan-tao-thoang-mat-tron-dang-om-the-thao-beginner-03-0023145/844b2b40-eef0-1800-4ba8-001b51172672.jpg?w=100&h=140&c=true&ntf=false"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="color:white;width:100%;height:40PX">
+                @* cách ra *@
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

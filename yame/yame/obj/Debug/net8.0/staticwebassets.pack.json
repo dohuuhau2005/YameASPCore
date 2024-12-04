@@ -1,0 +1,309 @@
+{
+  "Files": [
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\yame.bundle.scp.css",
+      "PackagePath": "staticwebassets\\yame.bundle.scp.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\Image\\911509877ac7c09999d6.jpg",
+      "PackagePath": "staticwebassets\\Image\\911509877ac7c09999d6.jpg"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\Image\\cat.jpg",
+      "PackagePath": "staticwebassets\\Image\\cat.jpg"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\Image\\cáthopping.png",
+      "PackagePath": "staticwebassets\\Image\\cáthopping.png"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\Image\\pexels-8moments-1323550.jpg",
+      "PackagePath": "staticwebassets\\Image\\pexels-8moments-1323550.jpg"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\css\\Account.css",
+      "PackagePath": "staticwebassets\\css\\Account.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\css\\footer.css",
+      "PackagePath": "staticwebassets\\css\\footer.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\css\\mainmenu.css",
+      "PackagePath": "staticwebassets\\css\\mainmenu.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\css\\test1.css",
+      "PackagePath": "staticwebassets\\css\\test1.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\css\\test2.css",
+      "PackagePath": "staticwebassets\\css\\test2.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\js\\selectProducts.js",
+      "PackagePath": "staticwebassets\\js\\selectProducts.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "H:\\Desktop\\WebAddNewWay\\YameASPCore-master\\YameASPCore-master\\YameASPCore-master\\yame\\yame\\wwwroot\\scss\\mainmenu.scss",
+      "PackagePath": "staticwebassets\\scss\\mainmenu.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.yame.props",
+      "PackagePath": "build\\yame.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.yame.props",
+      "PackagePath": "buildMultiTargeting\\yame.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.yame.props",
+      "PackagePath": "buildTransitive\\yame.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.yame.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

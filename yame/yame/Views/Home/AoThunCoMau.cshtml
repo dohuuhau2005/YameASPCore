@@ -1,0 +1,704 @@
+﻿@{
+    ViewData["Title"] = "Áo thun có màu và raglan";
+
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<style type="text/css">
+    .old-price,
+    .new-price,
+    discount {
+        display: inline-block;
+        margin-right: 10px;
+        /* Tạo khoảng cách giữa hai giá */
+    }
+
+
+
+    .color-options {
+        width: 55px;
+        /* Đặt kích thước cho hình ảnh */
+        height: 50px;
+        border-radius: 50%;
+        /* Tạo hình tròn cho hình ảnh nếu cần */
+        object-fit: cover;
+        /* Đảm bảo hình ảnh không bị méo */
+        padding-left: 10px;
+        gap: 10px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .w-100 {
+        display: none;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .product-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+
+    .product-grid01 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+    }
+
+    .product-item01 {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 550px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+    }
+
+    .product-item {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .product-info {
+        margin-top: 10px;
+
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .discount {
+        background-color: none;
+        color: black;
+        padding: 3px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .color-options {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 5px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 20px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 img {
+        border-radius: 8px;
+    }
+
+    .product-item01 img {
+        border-radius: 8px;
+        max-width: 520px;
+        height: auto
+    }
+
+
+    .color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+
+    .search-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Định dạng cho thanh tìm kiếm */
+    .search-bar select {
+        width: 100%;
+        max-width: 1200px;
+        /* Chiều rộng của thanh chọn lọc */
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block;
+        /* Để margin: auto hoạt động */
+        margin: 0 auto;
+        /* Căn giữa */
+    }
+
+    /* Định dạng cho banner hình ảnh */
+    .banner {
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-image {
+        width: 100%;
+        max-width: 1200px;
+        /* Giới hạn kích thước tối đa của ảnh */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        /* Đặt vị trí bên phải để hình ảnh ẩn */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        /* Hiệu ứng chuyển tiếp khi hover */
+    }
+
+    .image-container:hover .image {
+        transform: translateX(-130%);
+        /* Di chuyển hình ảnh chính sang trái */
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover .hover-image {
+        transform: translateX(-100%);
+        /* Di chuyển hình ảnh hover vào vị trí */
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+
+        <select class="filter-bar">
+            <option value="" disabled selected hidden>Lọc sản phẩm phù hợp</option>
+            <option value="all">Tất cả sản phẩm</option>
+            <option value="shirt">Áo</option>
+            <option value="pants">Quần</option>
+            <option value="shoes">Giày</option>
+        </select>
+    </div>
+
+    <div class="product-container container-fluid">
+        <h2>Nổi bật / Bán chạy / Mới</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022714/d7bfa8bf-7154-0100-d5db-001ad4c59b4b.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022714/980b436d-4443-1000-5c38-001bc1584a67.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">157</p>
+                    <p class="new-price" style="display: inline-block;">127</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022719/daaa1afc-fb4c-0b00-0e77-001ad4c631ec.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022721/70562429-cf52-0f00-bd7b-001ad4c655f4.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022723/bec46667-f0df-1300-8344-001ad4c68123.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022717/e1a19eb1-ad91-0700-1c6a-001ad4c5cec1.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022716/31ca2dd5-db06-0500-c546-001ad4c5bdc3.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022719/daaa1afc-fb4c-0b00-0e77-001ad4c631ec.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022719/013b99ee-c376-0b00-3390-001bc157a974.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock Hover" class="hover-image img-fluid">
+
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">157</p>
+                    <p class="new-price" style="display: inline-block;">127</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022714/d7bfa8bf-7154-0100-d5db-001ad4c59b4b.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022721/70562429-cf52-0f00-bd7b-001ad4c655f4.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022723/bec46667-f0df-1300-8344-001ad4c68123.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022717/e1a19eb1-ad91-0700-1c6a-001ad4c5cec1.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022716/31ca2dd5-db06-0500-c546-001ad4c5bdc3.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m10-0023706/d88b214c-449d-2d00-1a2a-001b9583951b.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Sock" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m10-0023706/a3df88ce-3d44-6c00-871d-001bcaeae088.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Sock Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="price" style="display: inline-block;">327</p>
+
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023480/0e878db4-e0e7-8600-13d3-001b7a04b038.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Short" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023480/58ebbd4c-f1a1-0e00-083d-001bc6e1f9d2.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Short Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="price" style="display: inline-block;">297</p>
+
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023483/92e19c3d-84d7-a700-22fa-001b7a0972c4.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023482/298b92f1-24e3-9c00-7333-001b7a0953d2.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023481/9aadaf19-70c8-9100-f252-001b7a0923cf.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m9-0023694/7ccec356-45f2-2100-db72-001b95834968.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Long Pant" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m9-0023694/f00dba3c-6a0b-6600-51c6-001bcaea3823.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Long Pant" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="price" style="display: inline-block;">327</p>
+
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+
+
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023335/a5b867a8-bbf2-1d00-ca31-001b68b7f1f6.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Polo Shirt" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023335/59321ce4-e94c-6d00-a7d1-001bc25b5948.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Polo Shirt" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="price" style="display: inline-block;">277</p>
+
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023337/d2e51689-cd48-3900-68e7-001b68b9233b.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023336/c3b946fc-3e3c-2b00-7150-001b68b8b4ba.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m4-0023390/bd207cf7-a3f6-9600-648b-001b5f19819e.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m4-0023390/dd85e0ae-2c99-1a00-5857-001bc250464e.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="price" style="display: inline-block;">277</p>
+
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <p>PKTT Vớ Non Branded 09 Vol 24</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m4-0023392/b29c7f50-d53d-aa00-57f0-001b5f1a3209.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m4-0023394/60020904-325a-be00-a5dc-001b5f1aa0e5.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m4-0023393/f36f5bf7-6f38-b400-cf5a-001b5f1a6de9.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m4-0023391/1de9e4a5-d505-a000-2fa0-001b5f19baa4.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022721/70562429-cf52-0f00-bd7b-001ad4c655f4.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022721/e2c11735-3f7b-0d00-68e4-001bc157eea6.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">157</p>
+                    <p class="new-price" style="display: inline-block;">127</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022714/d7bfa8bf-7154-0100-d5db-001ad4c59b4b.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022719/daaa1afc-fb4c-0b00-0e77-001ad4c631ec.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022723/bec46667-f0df-1300-8344-001ad4c68123.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022717/e1a19eb1-ad91-0700-1c6a-001ad4c5cec1.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022716/31ca2dd5-db06-0500-c546-001ad4c5bdc3.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid01">
+            <!-- Product 9 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022723/bec46667-f0df-1300-8344-001ad4c68123.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022723/21e7a7a5-988b-0f00-29a5-001bc15832d0.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">285</p>
+                    <p class="new-price" style="display: inline-block;">227</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options01">
+                        <div class="col-md-2">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022714/d7bfa8bf-7154-0100-d5db-001ad4c59b4b.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-2">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022719/daaa1afc-fb4c-0b00-0e77-001ad4c631ec.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-2">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022721/70562429-cf52-0f00-bd7b-001ad4c655f4.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-2 del">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022717/e1a19eb1-ad91-0700-1c6a-001ad4c5cec1.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-2 del">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-seventy-seven-03-0022716/31ca2dd5-db06-0500-c546-001ad4c5bdc3.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <!-- Product 10 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m7-0023693/4e0f66f5-11bc-1d00-ac18-001b958335e1.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m7-0023693/733711af-02b0-6500-fca3-001bcaea21dc.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="price" style="display: inline-block;">97</p>
+
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options01 row-md-col-6">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid">
+            <!-- Product 11 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023483/92e19c3d-84d7-a700-22fa-001b7a0972c4.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023483/a5d3b913-6bfa-1100-8316-001bc6e22391.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023480/0e878db4-e0e7-8600-13d3-001b7a04b038.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023482/298b92f1-24e3-9c00-7333-001b7a0953d2.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-dai-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m16-0023481/9aadaf19-70c8-9100-f252-001b7a0923cf.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m1-0023332/2e93cda9-784c-4e00-eabc-001b5f16dd2d.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m1-0023332/92aace57-0028-5f00-7870-001bc253b865.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">157</p>
+                    <p class="new-price" style="display: inline-block;">127</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <p>Áo thun cổ tròn ngắn tay</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m1-0023331/b99e26e6-7644-4400-5404-001b5f1649ff.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m6-0023692/a2766851-7c66-1900-089e-001b958320c9.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-mac-mat-phoi-mau-dang-vua-danh-cho-fan-one-piece-m6-0023692/f166f5ec-89ed-6400-c6ba-001bcaea0969.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <p>Áo Sơ Mi Cổ Bẻ</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023337/d2e51689-cd48-3900-68e7-001b68b9233b.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023337/9b260f3b-870c-6f00-c83b-001bc25b8424.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">297</p>
+                    <p class="new-price" style="display: inline-block;">227</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023335/a5b867a8-bbf2-1d00-ca31-001b68b7f1f6.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-thun-co-tron-tay-ngan-vai-cotton-2-chieu-tham-hut-phoi-mau-dang-rong-gia-tot-no-style-m2-0023336/c3b946fc-3e3c-2b00-7150-001b68b8b4ba.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="color:white;width:100%;height:40PX">
+        @* cách ra *@
+
+    </div>
+</body>
+
+</html>
+
+

@@ -1,0 +1,21 @@
+﻿.account-container {
+    background-image: url('../Image/pexels-8moments-1323550.jpg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+.account-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    opacity: .9;
+}
+

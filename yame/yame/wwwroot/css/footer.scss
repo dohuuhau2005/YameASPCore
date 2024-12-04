@@ -1,0 +1,50 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footerEnd {
+    background-color: rgb(88, 82, 82);
+    border: 1px solid red;
+    width: -webkit-fill-available;
+    height: 500px;
+}
+
+div,
+p,
+a.middlecontaner {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+
+    a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #00ffff;
+        margin-top: 10px;
+    }
+}
+
+.footerEnd {
+    .middlecontaner {
+        p {
+            color: white;
+        }
+    }
+
+    .hovera {
+        a {
+            padding: 10px 20px;
+        }
+    }
+
+    .middlecontaner .hovera {
+        a: hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+body {
+}

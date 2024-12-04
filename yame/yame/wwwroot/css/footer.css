@@ -1,0 +1,70 @@
+﻿
+
+.footerEnd {
+    background-color: rgb(88, 82, 82);
+    border: 1px solid red;
+    width: -webkit-fill-available;
+    height: 500px;
+}
+.middlecontaner{
+    .imgct{
+           justify-content:center;
+           text-align:center;
+         align-items:center;
+       }
+    p
+{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+}
+    div
+{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+}
+    a
+
+{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #00ffff;
+    margin-top: 10px;
+}
+
+}
+
+.footerEnd {
+    .middlecontaner
+
+{
+    p
+
+{
+    color: white;
+}
+
+}
+
+.hovera {
+    a
+
+{
+    padding: 10px 20px;
+}
+
+}
+
+.middlecontaner .hovera {
+    a: hover
+
+{
+    text-decoration: underline;
+}
+
+}
+}

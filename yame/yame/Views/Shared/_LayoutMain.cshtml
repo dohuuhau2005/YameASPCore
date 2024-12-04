@@ -1,0 +1,449 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <!-- view in adroid -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/mainmenu.css">
+    <link href="./css/footer.css" rel="stylesheet" >
+    <link rel="stylesheet" href="~/css/test1.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</head>
+<style>
+    
+
+    .hidden {
+        display: none; /* Ẩn form */
+    }
+</style>
+<header>
+    <div class="navbar bg-black navbar-expand-md ">
+        <a  class="navbar-brand text-white" asp-action="index" asp-area="" asp-controller="home">
+            <img src="//res.yame.vn/Content/images/yame-f-logo-white.png?v=20249" alt="">
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse"
+                data-bs-target="#navCt">
+            <!--just use for collapse and modal-->
+            <span class="navbar-toggler-icon bg-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navCt">
+            <!--nay de an nav-->
+
+            <div class="navbar-nav navct  ">
+                <ul class="navbar-nav   ">
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link  text-white active dropdown-toggle"
+                           data-bs-target="#drop1" data-bs-toggle="dropdown" href="" >
+                            Bộ Sưu
+                            Tập
+                        </a>
+                        <div class="dropdown-menu bg-black" id="drop1">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="box ">
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="NonBranded" asp-area="" asp-controller="Product">
+                                                Non
+                                                Branded (Tối
+                                                giản,
+                                                Tiết kiệm)
+                                            </a>
+                                        </div>
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="SeventySeven" asp-area="" asp-controller="Product">
+                                                Seventy Seven
+                                                (Giá
+                                                Tốt, Jean 277k)
+                                            </a>
+                                        </div>
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="NoStyle" asp-area="" asp-controller="Product">
+                                                No
+                                                Style (Gu nào
+                                                cũng Có)
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link text-white active dropdown-toggle"
+                           data-bs-target="#drop2" data-bs-toggle="dropdown" href="">
+                            GIÁ
+                            LUÔN
+                            TỐT
+                        </a>
+                        <div class="dropdown-menu bg-black" id="drop2">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="box ">
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="ThoiTrangGiatot" asp-area="" asp-controller="Product">
+                                                Thời Trang Giá
+                                                Tốt
+                                            </a>
+                                        </div>
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="Phukiengiatot" asp-area="" asp-controller="Product">
+                                              Phụ Kiện Giá Tốt
+                                            </a>
+                                        </div>
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="SaleKetThucVongDoi" asp-area="" asp-controller="Product">
+                                                Sale Kết Thúc Vòng Đời
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown  ">
+                        <a class="nav-link text-white active"
+                           asp-action="Moi" asp-controller="Product" asp-area="">MỚI</a>
+                    </li>
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link text-white active dropdown-toggle" href=""
+                           data-bs-target="#drop3" data-bs-toggle="dropdown">
+                            Áo
+                            Thun Nam
+                            | Nữ
+                        </a>
+                        <div class="dropdown-menu bg-black" id="drop3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="box ">
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="AoThunTron" asp-area="" asp-controller="Product">
+                                               Áo Thun Trơn
+                                            </a>
+                                        </div>
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="AoThunCoHinh" asp-area="" asp-controller="Product">
+                                                Áo Thun Có Hình
+                                            </a>
+                                        </div>
+                                        <div class="smallcontent">
+                                            <a class="dropdown-item text-white"
+                                               asp-action="AoThunCoMau" asp-area="" asp-controller="Product">
+                                              Áo Thun Có Màu
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item navbig " style=" margin-top:20px !important;">
+                        <a class="nav-link text-white active dropdown-toggle"
+                           data-bs-toggle="dropdown" data-target="dropdown-menu" href="">
+                            <i class="fa-solid fa-bars"
+                               style="    margin-top: -17px !important;"></i>
+                        </a>
+                        <div class="dropdown-menu" id="dropdown-menu">
+                            <div class="row row-cols-md-1 row-cols-lg-4 rowfix bg-black">
+                                <!-- Áo Polo Section -->
+                                <div class="col">
+                                    <div class="box py-lg-3 px-lg-3">
+                                        <div class="bigct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunTron" asp-area="" asp-controller="home">Áo polo</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunCoMau" asp-area="" asp-controller="home">Áo polo trơn</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunCoHinh" asp-area="" asp-controller="home">Áo polo có hình in</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunCoMau" asp-area="" asp-controller="home">Áo Polo Phối Màu & Raglan</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunTron" asp-area="" asp-controller="home">Áo Polo dáng rộng</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunTron" asp-area="" asp-controller="home">Áo Polo dáng vừa</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Áo Sơ Mi Section -->
+                                <div class="col">
+                                    <div class="box py-lg-3 px-lg-3">
+                                        <div class="bigct">
+                                            <a class="dropdown-item text-white" asp-action="NoStyle" asp-area="" asp-controller="home">Áo Sơ Mi</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NoStyle" asp-area="" asp-controller="home">Áo sơ mi tay dài</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="Phukiengiatot" asp-area="" asp-controller="home">Áo sơ mi tay ngắn</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Áo Khoác Section -->
+                                <div class="col">
+                                    <div class="box py-lg-3 px-lg-3">
+                                        <div class="bigct">
+                                            <a class="dropdown-item text-white" asp-action="SaleKetThucVongDoi" asp-area="" asp-controller="home">Áo Khoác</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Áo khoác dáng rộng</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Áo khoác dáng vừa</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="SaleKetThucVongDoi" asp-area="" asp-controller="home">Áo khoác Denim (Jean, Kaki)</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Áo Gió trượt nước, mỏng nhẹ</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Áo khoác Thun, Thể Thao</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Áo khoác trơn</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="SaleKetThucVongDoi" asp-area="" asp-controller="home">Áo khoác phối màu</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Áo Khoác chống nắng có mũ</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Áo khoác chống nắng không mũ</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quần dài Section -->
+                                <div class="col">
+                                    <div class="box py-lg-3 px-lg-3">
+                                        <div class="bigct">
+                                            <a class="dropdown-item text-white" asp-action="ThoiTrangGiatot" asp-area="" asp-controller="home">Quần dài (Tây, Jean, Thun)</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="SeventySeven" asp-area="" asp-controller="home">Quần Tây</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="ThoiTrangGiatot" asp-area="" asp-controller="home">Quần Jean lưng gài</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="SeventySeven" asp-area="" asp-controller="home">Quần Jean lưng thun</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Quần dài Kaki, Dù, Denim</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Quần dài Thun</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quần Short Section -->
+                                <div class="col">
+                                    <div class="box py-lg-3 px-lg-3">
+                                        <div class="bigct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Quần Short</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Quần Short Jean mềm</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Quần Short thun mát</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Quần Short thể thao nhanh khô</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phụ kiện thời trang Section -->
+                                <div class="col">
+                                    <div class="box py-lg-3 px-lg-3">
+                                        <div class="bigct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Phụ kiện thời trang</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunTron" asp-area="" asp-controller="home">Quần Lót</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Dây Nịt Da, Dây Thắt Lưng Da</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="ThoiTrangGiatot" asp-area="" asp-controller="home">Ví Da, Ví Passport</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NoStyle" asp-area="" asp-controller="home">Nón</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Tất - Vớ</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Khăn</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="AoThunCoHinh" asp-area="" asp-controller="home">Găng Tay</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Super Sale Thứ 4</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- BALO - TÚI TÍNH NĂNG Section -->
+                                <div class="col">
+                                    <div class="box py-lg-3 px-lg-3">
+                                        <div class="bigct">
+                                            <a class="dropdown-item text-white" asp-action="NoStyle" asp-area="" asp-controller="home">BALO - TÚI TÍNH NĂNG</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Bền - Giá tốt</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NoStyle" asp-area="" asp-controller="home">Chống sốc Laptop</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="SaleKetThucVongDoi" asp-area="" asp-controller="home">Trượt nước - Chống nước</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NonBranded" asp-area="" asp-controller="home">Nhỏ - Nhẹ</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="NoStyle" asp-area="" asp-controller="home">Sức chứa lớn</a>
+                                        </div>
+                                        <div class="smallct">
+                                            <a class="dropdown-item text-white" asp-action="SaleKetThucVongDoi" asp-area="" asp-controller="home">Đẳng cấp Doanh Nhân</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav-item dropdown  ">
+                        <a class="nav-link text-white active" onclick="toggleForm()"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+                    <li class="nav-item dropdown  ">
+                      @*   <a class="nav-link  text-white active " asp-area="Identity" asp-page="/Account/Login">
+                            
+                            <i class="fa-regular fa-user"></i>
+                        </a> *@
+                        <partial name="LoginPartialLayout"/>
+
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link text-white active" asp-action="Index" asp-controller="Cart" asp-area="">
+                            <i class="fa-solid fa-bag-shopping"></i>
+
+                        </a>
+                    </li>
+                    @if (User.IsInRole("Admin")){
+                    <li class="nav-item dropdown ">
+                            <a class="nav-link text-white active" asp-action="ManageUsers" asp-controller="Account" asp-area="">
+                                <i class="fa-regular fa-user"></i>
+
+                        </a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link text-white active" asp-action="Create" asp-controller="Product" asp-area="">
+                                <i class="fa-solid fa-plus"></i>
+
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+   
+        <div class="form-container" id="formContainer">
+            <form method="get" asp-action="SearchResults"asp-controller="Product" id="myForm">
+                <table class="table">
+                    <tr>
+              
+                        <td><input type="text" class="form-control" name="searchString" id="searchString" placeholder="Tìm sản phẩm..." /></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><input type="number" class="form-control" name="minPrice" id="minPrice" placeholder="Giá tối thiểu" /></td>
+                    </tr>
+                    <tr>
+               
+                        <td><input type="number" class="form-control" name="maxPrice" id="maxPrice" placeholder="Giá tối đa" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <button type="submit" class="btn btn-dark text-white">Tìm kiếm</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    
+</header>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+<footer>
+    <div class="footerEnd">
+        <div class="middlecontaner">
+            <div class="imgct">
+                <img src="//res.yame.vn/Content/images/yame-f-logo-white.png?v=20249" alt="">
+            </div>
+
+            <p>Đặt hàng và thu tiền tận nơi toàn quốc</p>
+            <p>Liên hệ: (028) 7307 1441</p>
+            <div class="hovera">
+                <a asp-action="Moi" asp-controller="Product" asp-area="">CHƯƠNG TRÌNH KHUYẾN MÃI MỚI</a>
+                <p><a asp-action="GioiThieu" asp-controller="Home" asp-area="">GIỚI THIỆU VỀ YAME</a></p>
+                <p><a asp-action="Index" asp-controller="Home" asp-area="">GIỚI THIỆU CÁC BỘ SƯU TẬP</a></p>
+                <p><a asp-action="CuaHang" asp-controller="Home" asp-area="">CÁC CỬA HÀNG YAME TOÀN QUỐC</a></p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
+<script>
+    function toggleForm() {
+        var formContainer = document.getElementById("formContainer");
+        formContainer.classList.toggle("hidden"); // Chuyển đổi giữa ẩn và hiện form
+    }
+</script>
+

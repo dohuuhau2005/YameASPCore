@@ -1,0 +1,71 @@
+﻿@using yame.ViewModels
+@model RegisterViewModel;
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/AccountLayout.cshtml";
+}
+
+<div class="account-container">
+    <div class="account-box">
+        <h2 class="text-center mb-4">Register</h2>
+        <form asp-action="Register" method="Post">
+            <div asp-validation-sumary="ModelOnly" class="text-danger"></div>
+            @*             FirstName *@
+
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label"></label>
+                <input asp-for="FirstName" class="form-control">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>  
+            @*             LastName *@
+
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label"></label>
+                <input asp-for="LastName" class="form-control">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+@*             BirthDay *@   
+
+            <div class="mb-3">
+                <label asp-for="Birthday" class="form-label"></label>
+                <input asp-for="Birthday" type="datetime-local" class="form-control">
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+            @*             Email*@
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            @*             Password*@
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+@*             ConfirmPassword*@           
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <input type="submit" Value="Register" class="btn btn-success w-100 p-2">
+
+            <p class="text-center mt-2">
+                Already have an account ? <a asp-controller="Account" asp-action="Login"
+                                          class="text-decoration-none">Login</a>
+            </p>
+            <div class="text-center">
+                <a asp-controller="Home" asp-action="Index" class="text-decoration-none">Back</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");
+    }
+}

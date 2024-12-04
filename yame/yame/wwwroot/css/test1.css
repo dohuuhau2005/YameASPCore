@@ -1,0 +1,59 @@
+﻿@media screen and (max-width: 700px) {
+    .product-item01 {
+        width: 300px !important;
+    }
+
+    .del {
+        display: none;
+    }
+
+    /* để xuống dòng */
+    .w-100 {
+        display: block !important;
+    }
+    .formh h1 {
+        margin-left: -19px !important;
+    }
+}
+@media screen and (min-width: 750px){
+    .formh form {
+        margin-left: 502px !important
+    }
+    .w-100 {
+        display: none !important;
+    }
+    .formctr {
+        position: relative;
+        left: 20%;
+        width: 740PX;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        text-align: center;
+       
+    }
+    .formctr h1 {
+        border-top: none;
+        border-bottom:1px solid black;
+    }
+    .rowcenter{
+        position:relative;
+        left:30%;
+    }
+    .colcenter{
+        width:300px;
+    }
+  
+}
+.formctr {
+    color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg")
+}
+.formctr p{
+    color:white !important;
+}
+
+    

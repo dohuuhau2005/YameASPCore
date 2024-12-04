@@ -1,0 +1,43 @@
+﻿@model Cart
+
+<h2>Giỏ hàng của bạn</h2>
+
+@if (Model == null || Model.Items.Count == 0)
+{
+    <p>Giỏ hàng của bạn đang trống.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.UnitPrice.ToString("C3")</td>
+                    <td>@item.Quantity</td>
+                    <td>@(item.Quantity * item.UnitPrice)0</td>
+                    <td>
+                        <form method="post" asp-action="RemoveFromCart" asp-controller="Cart">
+                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            <form method="post" asp-action="ClearCart" asp-controller="Cart">
+                
+                <button type="submit" class="btn btn-danger btn-sm">Clear</button>
+            </form>
+        </tbody>
+    </table>
+    <a asp-action="ThanhToan"asp-controller="home"asp-area="" class="btn btn-primary">Tiến hành thanh toán</a>
+}

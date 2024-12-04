@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Giỏ hàng trống";
+}
+
+<style>
+    .imgempty>img {
+        width: 522px;
+        height: 416px;
+    }
+
+    .emptytext>p {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .emptytext>h2 {
+        text-align:center;
+    }
+
+  
+    .imgempty{
+        text-align:center;
+    }
+</style>
+<div class="emptytext">
+<h2>@ViewData["Title"]</h2>
+    <p>Giỏ hàng của bạn đang trống. Mua Hàng đi bạn ơi !!!</p>
+    <p>Nhấn vào Mèo đi !!! Meo</p>
+</div>
+<div class="imgempty"><a asp-action="Index" asp-area="" asp-controller="Home"><img style="    width: 500px;" src="~/Image/cat.jpg" alt="Alternate Text" /></a></div>
+

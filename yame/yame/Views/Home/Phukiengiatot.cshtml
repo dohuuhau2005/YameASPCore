@@ -1,0 +1,685 @@
+﻿@{
+    ViewData["Title"] = "Phukiengiatot";
+
+
+
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<style type="text/css">
+    .old-price,
+    .new-price,
+    discount {
+        display: inline-block;
+        margin-right: 10px;
+        /* Tạo khoảng cách giữa hai giá */
+    }
+
+
+
+    .color-options {
+        width: 55px;
+        /* Đặt kích thước cho hình ảnh */
+        height: 50px;
+        border-radius: 50%;
+        /* Tạo hình tròn cho hình ảnh nếu cần */
+        object-fit: cover;
+        /* Đảm bảo hình ảnh không bị méo */
+        padding-left: 10px;
+        gap: 10px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .w-100 {
+        display: none;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .product-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+
+    .product-grid01 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+    }
+
+    .product-item01 {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 550px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+    }
+
+    .product-item {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .product-info {
+        margin-top: 10px;
+
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: black;
+        font-size: 14px;
+    }
+
+    .new-price {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .discount {
+        background-color: none;
+        color: black;
+        padding: 3px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .color-options {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 5px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 {
+        margin-top: 10px;
+        display: flex;
+        /* Sử dụng flexbox để xếp hình ảnh theo hàng ngang */
+        gap: 20px;
+        /* Tạo khoảng cách giữa các hình ảnh */
+    }
+
+    .color-options01 img {
+        border-radius: 8px;
+    }
+
+    .product-item01 img {
+        border-radius: 8px;
+        max-width: 520px;
+        height: auto
+    }
+
+
+    .color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+
+    .search-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Định dạng cho thanh tìm kiếm */
+    .search-bar select {
+        width: 100%;
+        max-width: 1200px;
+        /* Chiều rộng của thanh chọn lọc */
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block;
+        /* Để margin: auto hoạt động */
+        margin: 0 auto;
+        /* Căn giữa */
+    }
+
+    /* Định dạng cho banner hình ảnh */
+    .banner {
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-image {
+        width: 100%;
+        max-width: 1200px;
+        /* Giới hạn kích thước tối đa của ảnh */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        /* Đặt vị trí bên phải để hình ảnh ẩn */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        /* Hiệu ứng chuyển tiếp khi hover */
+    }
+
+    .image-container:hover .image {
+        transform: translateX(-130%);
+        /* Di chuyển hình ảnh chính sang trái */
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover .hover-image {
+        transform: translateX(-100%);
+        /* Di chuyển hình ảnh hover vào vị trí */
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="~/css/test1.css">
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+
+        <select class="filter-bar">
+            <option value="" disabled selected hidden>Lọc sản phẩm phù hợp</option>
+            <option value="none">Tất cả sản phẩm</option>
+            <option value="shirt">Áo</option>
+            <option value="pants">Quần</option>
+            <option value="shoes">Giày</option>
+        </select>
+    </div>
+    <div class="banner">
+        <!-- Banner hình ảnh -->
+        <div class="banner">
+            <img src="https://cmsv2.yame.vn/uploads/f90a4035-7346-445a-be94-ed440cc778d7/Ph%e1%bb%a5_ki%e1%bb%87n_gi%c3%a1_t%e1%bb%91t_danh_m%e1%bb%a5c.jpg?quality=80&w=1920&h=0"
+                 alt="Banner Non Branded" class="banner-image" />
+        </div>
+    </div>
+    <div class="product-container container-fluid">
+        <h2>Nổi bật / Bán chạy / Mới</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/tui-eo-daily-y-nguyen-ban-m1-0022279/b65ff9c8-b2aa-2800-41e2-001b3577caef.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/tui-eo-daily-y-nguyen-ban-m1-0022279/a1d79cb8-e8b4-2900-c3a3-001b3577caf4.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Sock Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">197</p>
+                    <p class="new-price" style="display: inline-block;">97</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item row-md-col-6" >
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-gang-tay-chong-uv-chong-nang-nguyen-ban-0022616/ca3e02d2-ffc8-0c00-d0ad-001aacb8575f.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="White Shirt">
+
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">97</p>
+                    <p class="new-price" style="display: inline-block;">47</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-item row-md-col-6" id="shoes">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023677/c37c6954-56e9-0100-81c4-001b623b2eb2.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Sock" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023677/e2730d0e-4c0c-2700-26f5-001bc56356a7.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Sock Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023676/96b5cbb0-5d6b-4600-9111-001b5fe6f390.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023678/fc1264f5-a052-5c00-6444-001b5fe76e65.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023680/17d52dc5-1140-7200-a0e2-001b5fe7ecfd.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023682/593442e9-f2c1-8800-18b1-001b5fe85d11.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023679/82c97d31-1d8e-6700-1320-001b5fe7954e.jpg?w=100&h=140&c=true&ntf=false" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/balo-daily-khoi-nguyen-13-0022702/86f7ee91-49e9-0100-bd69-001abd705bab.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Short" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/balo-daily-khoi-nguyen-13-0022702/c5175893-b298-0200-c1c1-001abd705bcf.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Black Short Hover" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">297</p>
+                    <p class="new-price" style="display: inline-block;">197</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-item row-md-col-6" id="shoes">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-nguyen-ban-v15-0021607/9e4bce57-3917-2e01-4fc7-001983bda9a3.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Long Pant" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-nguyen-ban-v15-0021607/82798fd6-d1b6-2f01-3760-001983bda9b0.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Long Pant" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+
+
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item row-md-col-6" id="shoes">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023676/96b5cbb0-5d6b-4600-9111-001b5fe6f390.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Polo Shirt" class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023676/d0e0607a-fa30-2800-3b79-001bc563656c.jpg?w=540&h=756&c=true&ntf=false"
+                         alt="Polo Shirt" class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023677/c37c6954-56e9-0100-81c4-001b623b2eb2.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023678/fc1264f5-a052-5c00-6444-001b5fe76e65.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023680/17d52dc5-1140-7200-a0e2-001b5fe7ecfd.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023682/593442e9-f2c1-8800-18b1-001b5fe85d11.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-08-0023679/82c97d31-1d8e-6700-1320-001b5fe7954e.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-item row-md-col-6" id="shoes">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023775/e8800474-4b4c-3700-a2bb-001b754e5be9.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023775/da9c8283-341c-5b00-b416-001bc573a1e6.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <p>PKTT Vớ Non Branded 09 Vol 24</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023776/3fe8fd0c-b995-4000-85e0-001b754e82d6.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023779/f5e02f3e-d0ff-5b00-3a87-001b754f2cad.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023774/5a14e82c-ba04-2e00-cc7a-001b754e2135.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023777/86e98c8b-4a4d-4900-3ec6-001b754eea2d.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023773/96b5541e-8d8f-2500-a680-001b754dc73c.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-underwear-on-gian-y-nguyen-ban-ver3-0020543/5b5c66f5-8c83-c601-614d-0018b1e8457c.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-underwear-on-gian-y-nguyen-ban-ver3-0020543/6789749f-d735-c701-bb20-0018b1e8458d.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">117</p>
+                    <p class="new-price" style="display: inline-block;">77</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-underwear-on-gian-y-nguyen-ban-ver3-0020544/14afa418-f965-cf01-204b-0018b1e8578b.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid01">
+            <!-- Product 9 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-day-nit-no-style-dn15-0018502/1cf23c1c-2ec1-6400-07d8-001bca2e0e5c.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-day-nit-no-style-dn15-0018502/cc24e0c8-9587-6500-7bbc-001bca2e0e77.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">285</p>
+                    <p class="new-price" style="display: inline-block;">227</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options01">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 "></div>
+            <!-- Product 10 -->
+            <div class="product-item01 container-fluid row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-non-the-style-of-no-style-57-0021986/74b68797-1f2b-3102-a4fb-001a29a1a1be.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-non-the-style-of-no-style-57-0021986/de8969ce-1962-9402-b7df-001a29a9df49.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="price" style="display: inline-block;">97</p>
+
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options01 row-md-col-6">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+                        <div class="col-md-2 del">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top:20px;"></div>
+        <div class="product-grid">
+            <!-- Product 11 -->
+            <div class="product-item row-md-col-6" id="shoes">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-10-0023833/0b8447af-f9d5-e500-4320-001b75561215.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-10-0023833/66c46413-6ef6-6300-2c0e-001bc574daf6.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-10-0023834/18cfce1a-da05-ed00-c365-001b755634a2.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vi-y2010-01-0023588/59982ced-a4b8-d100-f334-001b5ff3f454.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vi-y2010-01-0023588/a56d2ecb-064b-d200-9881-001b5ff3f45a.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">157</p>
+                    <p class="new-price" style="display: inline-block;">127</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <p>Áo thun cổ tròn ngắn tay</p>
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product-item row-md-col-6" id="shoes">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023776/3fe8fd0c-b995-4000-85e0-001b754e82d6.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vo-no-brand-09-0023776/2c055623-4d00-5a00-33c2-001bc5739225.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">37</p>
+                    <p class="new-price" style="display: inline-block;">27</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+                    <p>Áo Sơ Mi Cổ Bẻ</p>
+                    <div class="color-options">
+                        <div class="col-md-10">
+                            <img src="https://cdn2.yame.vn/pimg/ao-so-mi-co-be-tay-dai-tham-hut-soi-nhan-tao-tron-dang-vua-gia-tot-non-branded-19-0024012/88e32a08-ed85-0800-f120-001ba6a90726.jpg?w=100&h=140&c=true&ntf=false">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-item row-md-col-6">
+                <div class="image-container" style="position: relative;">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vi-thinh-vuong-7-0022411/3bb768e1-be38-e600-5ac5-001a7b471339.jpg?w=540&h=756&c=true&ntf=false"
+                         class="image img-fluid">
+                    <img src="https://cdn2.yame.vn/pimg/pktt-vi-thinh-vuong-7-0022411/80282f6c-96f4-e500-3f11-001a7b471326.jpg?w=540&h=756&c=true&ntf=false"
+                         class="hover-image img-fluid">
+                </div>
+                <div class="product-info">
+                    <p class="old-price" style="display: inline-block;">297</p>
+                    <p class="new-price" style="display: inline-block;">227</p>
+                    <p class="discount" style="display: inline-block;">Giá tốt</p>
+
+                    <div class="color-options row-md-col-6">
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+                        <div class="col-md-10">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="color:white;width:100%;height:40PX">
+        @* cách ra *@
+
+    </div>
+    <script src="../js/selectProducts.js"></script>
+</body>
+
+</html>
+
+

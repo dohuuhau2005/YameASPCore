@@ -1,0 +1,108 @@
+﻿﻿* {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* .roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  } */
+@media screen and (min-width: 900px) {
+    .navbar {
+      
+    }
+
+    .dropdown:hover {
+        .dropdown-menu {
+            display: block;
+        }
+    }
+
+    .dropdown {
+        position: relative;
+        top: 20px;
+        height: 60px;
+    }
+
+    .dropdown .dropdown-menu {
+        top: 53px;
+    }
+}
+.navbar {
+  
+}
+
+.navbar {
+    .navbar-brand {
+        position: relative !important;
+        right: -20px;
+        /* set up ko anh huong den navbar md screen */
+        padding: 20px 60px !important;
+
+        img {
+            width: 163px;
+            height: 58px;
+        }
+    }
+}
+
+.navct {
+    .navbar-nav {
+        .nav-item {
+            padding: 0 20px !important;
+            font-family: "Roboto", sans-serif;
+            font-weight: 100px;
+            font-style: normal;
+            font-size: 20px;
+            text-align: right;
+
+            .dropdown-menu {
+                .row {
+                    width: -webkit-fill-available;
+                    border-top: 2px solid red;
+
+                    .col {
+                        .box {
+                            .bigct {
+                                .dropdown-item {
+                                    font-family: "Roboto", sans-serif;
+                                    font-weight: 100px;
+                                    font-style: normal;
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .smallct {
+                                .dropdown-item {
+                                    font-family: "Roboto", sans-serif;
+                                    font-weight: 100px;
+                                    font-style: normal;
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dropdown-item:hover {
+    color: black !important;
+    background-color: rgb(222, 228, 226) !important;
+    transition: all 0.5s ease !important;
+}
+
+
+
+.nav-link:hover {
+    color: brown !important;
+}
+
+.navbig {
+    margin-top: -17px !important;
+}
+
+/* others contents of nav */

@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "CuaHang";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<style type="text/css">
+    .nav-item {
+        width: 100%;
+        position: relative; /* Hoặc position: absolute, tùy thuộc vào yêu cầu */
+    }
+
+        .nav-item .dropdown-menu {
+            width: 100vw; /* Chiếm toàn bộ chiều rộng màn hình */
+            max-width: 100%; /* Đảm bảo không bị vượt quá chiều rộng màn hình */
+        }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link href="~/css/mainmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/test1.css">
+</head>
+<body>
+    <div>
+        <li class="nav-item navbig " style=" color:black ;margin-top:20px !important;">
+            <a class="nav-link text-white active dropdown-toggle"
+               data-bs-toggle="dropdown" data-target="dropdown-menu" href="">
+                <i class=""
+                   style="   color:black; margin-top: -17px !important;">
+                    <h1>Danh Sách Các Cửa Hàng</h1>
+                </i>
+            </a>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <div class="row row-cols-sm-1 row-cols-lg-3 bg-black">
+                    <!-- Áo Polo Section -->
+                    <div class="col">
+                        <div class="box py-lg-6 px-lg-6">
+                            <div class="bigct">
+                                <a class="dropdown-item1 text-white">+ YAME THÀNH PHỐ HCM</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href="https://maps.app.goo.gl/mzJTh8SFvCNpAtPC6">YaMe Quận 5, 190 Nguyễn Trãi, P.3, Q.5, Tp.HCM</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href=" https://maps.app.goo.gl/tKA3QzQFwGruRZVf8"> YaMe Quận Tân Phú 2</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href="https://maps.app.goo.gl/joJ4udQkmVBSfnyHA">YaMe Q.10: 770F, Sư Vạn Hạnh (nd)</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Áo Sơ Mi Section -->
+                    <div class="col">
+                        <div class="box py-lg-3 px-lg-3">
+                            <div class="bigct">
+                                <a class="dropdown-item1 text-white">+TÂY NAM BỘ</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href="https://maps.app.goo.gl/Fm5SBgy7STdE5WVy6">YaMe Cần Thơ 1</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href=" https://maps.app.goo.gl/9x5m8GrwjdZQQw689"> YaMe Cần Thơ 2</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href="https://maps.app.goo.gl/q4ouLmmgzKQzhpQQ6">YaMe Tân An</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Áo Khoác Section -->
+                    <div class="col">
+                        <div class="box py-lg-3 px-lg-63">
+                            <div class="bigct">
+                                <a class="dropdown-item1 text-white" href="">+ĐÔNG NAM BỘ & TÂY NGUYÊN</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href="https://maps.app.goo.gl/HzGXbPAkMSYMuhi79">YaMe Biên Hòa 1</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href=" https://maps.app.goo.gl/wR4HnYpY49XZtYKU8"> YaMe Biên Hòa 2</a>
+                            </div>
+                            <div class="smallct">
+                                <a class="dropdown-item text-white" href="https://maps.app.goo.gl/SqJD9q6w3hNf4joT7">YaMe Thủ Dầu Một</a>
+                            </div>
+                        </div>
+                    </div>
+        </li>
+    </div>
+
+</body>
